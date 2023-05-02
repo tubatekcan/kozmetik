@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+
+
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -46,72 +49,19 @@
                 <div class="row align-items-center">
                     <div class="col-5 col-sm-6 col-lg-3">
                         <div class="header-logo">
-                            <a href="index.html">
-                                <img class="logo-main" src="~/clientt/assets/images/logo.webp" width="95" height="68" alt="Logo" />
+                            <a href="/">
+                                <img class="logo-main" src="~/clientt/assets/images/logo1.png" width="95" height="68" alt="Logo" />
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="header-navigation">
-                            <ul class="main-nav justify-content-start">
-                                <li class="has-submenu">
-                                    <a href="/home/index">Ana Sayfa</a>
-                                </li>
-                                <li><a href="/home/hakkimizda">Hakkımızda</a></li>
-                                <li class="has-submenu position-static">
-                                    <a href="product.html">shop</a>
-                                    <ul class="submenu-nav-mega">
-                                        <li>
-                                            <a href="#/" class="mega-title">Shop Layout</a>
-                                            <ul>
-                                                <li><a href="product-four-columns.html">Shop 4 Column</a></li>
-                                                <li><a href="product-left-sidebar.html">Shop Left Sidebar</a></li>
-                                                <li><a href="product-right-sidebar.html">Shop Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#/" class="mega-title">Single Product</a>
-                                            <ul>
-                                                <li><a href="product-details-normal.html">Single Product Normal</a></li>
-                                                <li><a href="product-details.html">Single Product Variable</a></li>
-                                                <li><a href="product-details-group.html">Single Product Group</a></li>
-                                                <li><a href="product-details-affiliate.html">Single Product Affiliate</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#/" class="mega-title">Diğer Sayfalar</a>
-                                            <ul>
-                                                <li><a href="product-cart.html">Sepet</a></li>
-                                                <li><a href="product-checkout.html">Çıkış</a></li>
-                                                <li><a href="product-wishlist.html">İstek Listesi</a></li>
-                                                @*<li><a href="product-compare.html">Ürünleri Kıyasla</a></li>*@
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="blog.html">Sık Sorulan Sorular</a>
-                                    <ul class="submenu-nav">
-                                        <li class="has-submenu">
-                                            <a href="#/">Blog Layout</a>
-                                            <ul class="submenu-nav">
-                                                <li><a href="blog.html">Sık Sorulan Sorular</a></li>
-                                        </li>
-                                        <li><a href="blog-details.html">Blog Detay</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="account-login.html">Sayfalar</a>
-                                    <ul class="submenu-nav">
-                                        <li><a href="account-login.html">Hesabım</a></li>
-                                        <li><a href="faq.html">Sık sorulan Sorular</a></li>
-                                        @*<li><a href="page-not-found.html">Sayfa Bulunamadı</a></li>*@
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">İletişim</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                
+
+
+                    @await Component.InvokeAsync("TopCategory")
+
+
+
+
 
                     <div class="col-7 col-sm-6 col-lg-3">
                         <div class="header-action justify-content-end">
@@ -143,7 +93,7 @@
                                 </span>
                             </button>
 
-                            <a class="header-action-btn" href="account-login.html">
+                            <a class="header-action-btn" href="/hesap/giris">
                                 <span class="icon">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect class="icon-rect" width="30" height="30" fill="url(#pattern3)" />
@@ -169,7 +119,7 @@
         </header>
         <!--== End Header Wrapper ==-->
 
-      @RenderBody()
+        @RenderBody()
 
         <!--== Start Footer Area Wrapper ==-->
         <footer class="footer-area">
@@ -180,24 +130,24 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="widget-item">
                                 <div class="widget-about">
-                                    <a class="widget-logo" href="index.html">
+                                    <a class="widget-logo" href="/">
                                         <img src="~/clientt/assets/images/logo.webp" width="95" height="68" alt="Logo">
                                     </a>
-                                    <p class="desc">Dünya'nın en iyi kozmetik markaları ile kendinize bir güzellik yapın.'</p>
+                                    <p class="desc">Dünyanın en iyi kozmetik markaları ile kendinize bir güzellik yapın.'</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-5 mt-md-0 mt-9">
                             <div class="widget-item">
-                                <h4 class="widget-title">Information</h4>
+                                <h4 class="widget-title"></h4>
                                 <ul class="widget-nav">
-                                    <li><a href="/home/index">Ana Sayfa</a></li>
-                                    <li><a href="/home/hakkimizda">Hakkımızda</a></li>
-                                    <li><a href="my-account.html">Hesabım</a></li>
-                                    <li><a href="account-login.html">Giriş</a></li>
-                                    <li><a href="product.html">Sipariş</a></li>
-                                    <li><a href="faq.html">S.S.S</a></li>
-                                    <li><a href="contact.html">İletişim</a></li>
+                                    <li><a href="/">Ana Sayfa</a></li>
+                                    <li><a href="/hakkimizda">Hakkımızda</a></li>
+                                    <li><a href="/hesap/giris">Hesabım</a></li>
+                                    <li><a href="/hesap/UyeOl">Üye Ol</a></li>
+                                    <li><a href="/">Sipariş</a></li>
+                                    <li><a href="/SSS">Sık Sorulan Sorular</a></li>
+                                    <li><a href="/Iletisim">İletişim</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -263,7 +213,7 @@
                                 <i class="fa fa-times"></i>
                             </button>
                             <div class="modal-action-messages">
-                                <i class="fa fa-check-square-o"></i> Added to cart successfully!
+                                <i class="fa fa-check-square-o"></i> Sepete eklendi!
                             </div>
                             <div class="modal-action-product">
                                 <div class="thumb">
@@ -301,37 +251,15 @@
             </div>
         </aside>
         <!--== End Aside Search Form ==-->
-       
         <!--== Start Aside Cart ==-->
-        <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
-                <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Shopping Cart <i class="fa fa-chevron-right"></i></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="aside-cart-product-list">
-                    <li class="aside-product-list-item">
-                        <a href="#/" class="remove">×</a>
-                        <a href="product-details.html">
-                            <img src="~/clientt/assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
-                            <span class="product-title">Leather Mens Slipper</span>
-                        </a>
-                        <span class="product-price">1 × £69.99</span>
-                    </li>
-                    <li class="aside-product-list-item">
-                        <a href="#/" class="remove">×</a>
-                        <a href="product-details.html">
-                            <img src="~/clientt/assets/images/shop/cart2.webp" width="68" height="84" alt="Image">
-                            <span class="product-title">Quickiin Mens shoes</span>
-                        </a>
-                        <span class="product-price">1 × £20.00</span>
-                    </li>
-                </ul>
-                <p class="cart-total"><span>Subtotal:</span><span class="amount">£89.99</span></p>
-                <a class="btn-total" href="product-cart.html">View cart</a>
-                <a class="btn-total" href="product-checkout.html">Checkout</a>
-            </div>
-        </aside>
+        
+
+        @*sukuşu*@
+
+        @await Component.InvokeAsync("RightCart",new {sid=Convert.ToInt32(User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Sid)?.Value)})
+
+
+
         <!--== End Aside Cart ==-->
         <!--== Start Aside Menu ==-->
         <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
@@ -427,13 +355,42 @@
     <script src="~/clientt/assets/js/plugins/jquery.nice-select.min.js"></script>
 
     <!-- Custom Main JS -->
+
     <script src="~/clientt/assets/js/main.js"></script>
 
 
     @RenderSection("Scriptim", required: false)
 
-    
+    @*sukuşu*@
+    <script>
 
+        // Product Quantity JS
+        var proQty = $(".pro-qty");
+        proQty.append('<div class= "dec qty-btn">-</div>');
+        proQty.append('<div class="inc qty-btn">+</div>');
+        $('.qty-btn').on('click', function (e) {
+            e.preventDefault();
+            var $button = $(this);
+            var oldValue = $button.parent().find('input').val();
+            var x = $('#price1').html().replace('₺', '');
+            var y = parseFloat(x);
+            if ($button.hasClass('inc')) {
+                var newVal = parseFloat(oldValue) + 1;
+
+            } else {
+                // Don't allow decrementing below zero
+                if (oldValue > 1) {
+                    var newVal = parseFloat(oldValue) - 1;
+                } else {
+                    newVal = 1;
+                }
+
+
+            }
+            $("#total1").html('Toplam : ₺' + (newVal * y));
+            $button.parent().find('input').val(newVal);
+        });
+
+    </script>
 </body>
-
 </html>

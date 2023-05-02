@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+<div class="col-lg-6 d-none d-lg-block">
+    <div class="header-navigation">
+        <ul class="main-nav justify-content-start">
+            <li class="has-submenu">
+                <a href="/">Ana Sayfa</a>
+            </li>
+            <li class="has-submenu position-static">
+                <a href="product.html">Kategoriler</a>
+                <ul class="submenu-nav-mega">
+                    @foreach (Category category in Model)
+                    {
+                        <li><a href="/@category.CategoryName">@category.CategoryName</a></li>
+                    }
+                </ul>
+            </li>
+
+
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
+            <li><a href="/Iletisim">İletişim</a></li>
+            <li>
+                <a href="SSS">Sık Sorulan Sorular</a>
+            </li>
+           <li>
+                <a href="">Blog</a>
+           </li>
+           
+        </ul>
+    </div>
+</div>

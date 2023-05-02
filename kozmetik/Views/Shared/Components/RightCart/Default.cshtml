@@ -1,0 +1,53 @@
+﻿@model CartViewModel
+
+<aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h1 class="d-none" id="offcanvasRightLabel">SEPET</h1>
+        <button class="btn-aside-cart-close" data-bs-dismiss="offcanvas" aria-label="Close">Sepet<i class="fa fa-chevron-right"></i></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="aside-cart-product-list">
+            
+            
+            @foreach (Cart cart in Model.cartss)
+            {
+
+                <li class="aside-product-list-item">
+                    <a href="#/" class="remove">×</a>
+                    <a href="product-details.html">
+                        <img src="~/clientt/assets/images/shop/cart1.webp" width="68" height="84" alt="Image">
+                        <span class="product-title">@cart.Product.ProductName</span>
+                    </a>
+                    <span class="product-price">@cart.Quantity × @cart.Product.ProductPrice</span>
+                </li>
+            }
+            
+        </ul>
+        <p class="cart-total">
+
+            @if (Model.sidd!=0)
+            {
+                if (Model.cartss.Count>0)
+                {
+                    <span>Toplam:</span>
+
+                    <span class="amount">@Model.cartss.Sum(a=>(a.Quantity)*(a.Product.ProductPrice))</span>
+                    <a class="btn-total" href="/sepet">Sepete Git</a>
+                    <a class="btn-total" href="product-checkout.html">Satın AL</a>
+                }
+                else
+                {
+                    <span >SEPETİNİZ BOŞ</span>
+                }
+            }
+            else
+            {
+                <span>Görüntülemek için lütfen <a href="/hesap/giris">GİRİŞ</a> Yapınız</span>
+
+                
+            }
+
+        </p>
+        
+    </div>
+</aside>

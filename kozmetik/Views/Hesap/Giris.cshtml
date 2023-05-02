@@ -1,0 +1,58 @@
+﻿@model GirisViewModel
+
+@{
+    ViewData["Title"] = "Giris";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<main class="main-content">
+
+  <!--== Start Account Area Wrapper ==-->
+    <section class="section-space">
+        <div class="container">
+            <div class="row mb-n8">
+                <div class="col-lg-12 mb-8">
+                    <!--== Start Login Area Wrapper ==-->
+                    <div class="my-account-item-wrap">
+                        <h3 class="title">Giriş Yap</h3>
+                        <div class="my-account-form">
+                            <form action="/hesap/giris" method="post">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group mb-6">
+                                    <label for="login_username">Kullanıcı Adı ya da Eposta<sup>*</sup></label>
+                                    <input type="email" name="Emaill" id="login_username" value="@Model.Emaill">
+                                </div>
+
+                                <div class="form-group mb-6">
+                                    <label for="login_pwsd">Şifre <sup>*</sup></label>
+                                    <input type="password" name="Passwordd" id="login_pwsd">
+                                </div>
+
+                                <div class="form-group d-flex align-items-center mb-14">
+                                    <input type="submit" class="btn" value="Giriş">
+
+                                    <div class="form-check ms-3">
+                                        <input type="checkbox" class="form-check-input" id="remember_pwsd">
+                                        <label class="form-check-label" for="remember_pwsd">Beni Hatırla</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group d-flex align-items-center mb-14">
+                                <a class="lost-password" href="my-account.html">Şifremi Unuttum?</a>
+
+                                <a class="lost-password ms-6" href="/hesap/uyeol">ÜYE OL</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--== End Login Area Wrapper ==-->
+                </div>
+             
+            </div>
+        </div>
+    </section>
+    <!--== End Account Area Wrapper ==-->
+
+</main>

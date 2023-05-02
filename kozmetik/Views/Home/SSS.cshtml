@@ -1,0 +1,128 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+        <main class="main-content">
+           
+            <!--== Start Faq Area Wrapper ==-->
+            <section class="faq-area">
+                <div class="container">
+                    <div class="row flex-xl-row-reverse">
+                        <div class="col-lg-6 col-xl-7">
+                            <div class="faq-thumb">
+                                <img src="/clientt/assets/images/photos/faq-home.webp" width="601" height="368" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-5">
+                            <div class="faq-content">
+                                <div class="faq-text-img"><img src="/clientt/assets/images/photos/faq.webp" width="199" height="169" alt="Image"></div>
+                                <h2 class="faq-title">Sık Sorulan Sorular</h2>
+                                <p class="faq-desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="accordion" id="FaqAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading1">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    Alışveriş  Prosedürleri
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>Lütfen daha önce kullandığınız ve deneyimine sahip olduğunuz renklerdeki ürünleri sitemizden satın alınız.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    Üye olmadan alışveriş yapabilirmiyim ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>İnternet sitemizden alışveriş yapabilmek için sistemimize üye olmanız gerekli değildir. Dilerseniz misafir üye olarak da siparişinizi tamamlayabilirsiniz. Hızlı üye olmak için Facebook ile bağlan butonunu kullanabilirsiniz.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    Alışveriş Sepeti nedir?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>İnternet sitemize giriş yapıldıktan sonra seçerek almak istediğiniz ürünlerin toplu halde bulunduğu kişiye özel bir alandır. Siparişinizi vermeden önce sepetinizdekilere ekleme, çıkarma yapabilir, adetlerini değiştirebilirsiniz. Sepetiniz sistemden çıkmanız durumunda veya internet tarayıcınızı kapattığınızda dahi saklanır ve bir sonraki girişinizde kaldığınız yerden devam edebilirsiniz. (Bu durum misafir üye olan kullanıcılarımız için geçerli değildir.)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    Aradığım ürüne en kolay nasıl ulaşabilirim?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>
+                                        1) Sitemizin içerisinde mevcut olan site içi arama motorumuzdan, aradığınız ürünün sadece birkaç harfini arama penceresine yazıp 'Ara' tuşuna basmanız yeterli olacaktır. Sürekli aldığınız bir ürün ise ürün barkodunu arama bölümüne yazarak, istediğiniz ürünü çok hızlı bir şekilde bulabilirsiniz. Böylece aradığınız ürüne hızlı bir şekilde erişmiş olacaksınız.
+                                        2) Yada sol menü'den ilgilendiğiniz ana kategori ve alt kategoriler vasıtası ile aramış olduğunuz ürünü bulabilirsiniz. Yine bu bölümde yer alan marka ve fiyat filtreleme modüllerimizi kullanabilirsiniz. Sayfamız tasarım esnasında marka , parça sayısı , özellik, kategori ve tema dikkate alınarak özenle hazırlanmıştır.
+                                    </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    Yaptığım alıverişlerde teslimat şekilleri nasıldır?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>Oluşturmuş olduğunuz siparişleriniz 24 saat içerisinde kargoya teslim edilir. (Cumartesi-pazar ve resmi tatiller bu süreye dahil değildir.)  Teslimatlar sizin seçiminize göre Yurtiçi ya da Ups kargo ile yapılmaktadır. Her türlü soru, görüş ve önerileriniz için müşteri hizmetlerimizi arayabilirsiniz.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                    Alışveriş yapmak için kredi kartı bilgilerimi girmek zorundamıyım ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>Sayfamızdan Kredi Kartı (maaş-banka-debit kart) ile alışveriş yapabilirsiniz, bu sebeple sitemizden alışveriş yaparken kart bilgilerinizi girmeniz gerekmektedir. İnternet sitemizde yapacağınız her alışveriş %100 güvenlidir. 128 bit’lik SSL (Secure Socket Layer) güvenliği içerisinde kredi kartı numaranızı sizin dışınızda kimse görüntüleyemez, ulaşamaz. Kredi kartı numaranızı girdiğiniz anda numaranıza ait bilgiler şifrelenerek bankaya gönderilir. Firmamız dahil olmak üzere üçüncü şahıslar tarafından bilgilerinizin görüntülenmesi veya ulaşılması mümkün değildir. Kart bilgileriniz sadece siz ve banka arasındadır.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading7">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                    Siparişim elime ulaşmadı, ne yapmalıyım?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#FaqAccordion">
+                                        <div class="accordion-body">
+                                    <p>DMağaza siparişi kargoya verdiyse gecikme kargo firmasından kaynaklanmış olabilir. Kargo Takip linkini tıklayarak siparişinizin nerede olduğunu görebilirsiniz. Kargo ile iletişime geçememe durumda müşteri hizmetleri arkadaşlarımızla iletişime geçerseniz size yardımcı olunacak ve siparişiniz hakkında bilgilendirme yapılacaktır.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--== End Faq Area Wrapper ==-->
+
+        </main>
+
+  

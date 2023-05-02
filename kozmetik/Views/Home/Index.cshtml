@@ -23,7 +23,7 @@
                         <div class="swiper brand-logo-slider-container">
                             <!--== Start Product Category Item ==-->
                             <a href="/@category.CategoryName" class="product-category-item">
-                                <img class="icon" src="~/clientt/assets/images/shop/category/1.webp" width="70" height="80" alt="Image-HasTech">
+                                <img class="icon" src="~/clientt/assets/images/shop/category/@(category.CategoryID).webp" width="70" height="80" alt="Image-HasTech">
                                 <h3 class="title">@category.CategoryName</h3>
                             </a>
                             <!--== End Product Category Item ==-->
@@ -42,18 +42,19 @@
                         <!--== Start Product Item ==-->
                         <div class="product-item product-st3-item">
                             <div class="product-thumb">
-                                <a class="d-block" href="/home/urundetay/@product.ProductID">
-                                    <img src="~/clientt/assets/images/shop/@(product.ProductID).jpg" width="370" height="450" alt="Image-HasTech">
+                                <a class="d-block" href="/urundetay/@product.ProductID">
+                                    <img src="~/clientt/assets/images/shop/@(product.ProductID).png " width="370" height="450" alt="Image-HasTech">
                                 </a>
-                                <span class="flag-new">new</span>
+                                <span class="flag-new">Yeni</span>
                                 <div class="product-action">
-                                    <button type="button" id="UrunPopup" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal" data-baslik="@product.ProductName" data-icerik="@product.Description"  data-fiyat="@product.ProductPrice"  >
+                                    <button type="button" id="UrunPopup" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal" data-baslik="@product.ProductName" data-icerik="@product.Description" data-fiyat="@product.ProductPrice" data-idd="@product.ProductID">
                                         <i class="fa fa-expand"></i>
                                     </button>
-                                    <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                        <span>Add to cart</span>
-                                    </button>
                                     @*sukuşu*@
+                                    @*<button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                <span>Add to cart</span>
+                                </button>*@
+
                                     @*<button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                 <i class="fa fa-heart-o"></i>
                                 </button>*@
@@ -296,37 +297,40 @@
                             <div class="col-lg-6">
                                 <!--== Start Product Thumbnail Area ==-->
                                 <div class="product-single-thumb">
-                                    <img src="~/clientt/assets/images/shop/quick-view1.webp" width="544" height="560" alt="Image-HasTech">
+                                    @*<img src="~/clientt/assets/images/shop/@(product.ProductID).webp" width="544" height="560" alt="Image-HasTech">*@
                                 </div>
                                 <!--== End Product Thumbnail Area ==-->
                             </div>
                             <div class="col-lg-6">
                                 <!--== Start Product Info Area ==-->
                                 <div class="product-details-content">
-                                    <h5 class="product-details-collection">SEÇİLİ ÜRÜN DETAYI</h5>
-                                    <h3 class="product-details-title"></h3>
-                                    <div class="product-details-review mb-5">
-                                        <div class="product-review-icon">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-half-o"></i>
+                                    <form action="/home/sepeteekle" method="post">
+                                        <h5 class="product-details-collection">SEÇİLİ ÜRÜN DETAYI</h5>
+                                        <h3 class="product-details-title"></h3>
+                                        <input type="hidden" id="productidd" name="ProductID" />
+                                        <p id="urunIcerikParagrafi" class="mb-6"></p>
+                                        <div class="product-details-pro-qty">
+
+                                            <div class="pro-qty">
+                                                <input id="price2" type="text" title="Quantity" name="Quantity" value="1">
+                                            </div>
+
+                                            <h4 id="price1" class="price float-end"></h4>
+
+
                                         </div>
-                                        <button type="button" class="product-review-show">150 reviews</button>
-                                    </div>
-                                    <p id="urunIcerikParagrafi" class="mb-6"></p>
-                                    <div class="product-details-pro-qty">
-                                        <div class="pro-qty">
-                                            <input type="text" title="Quantity" value="01">
+                                        <div class="product-details-action">
+                                            @*<h4 id="price1" class="price"></h4>*@
+                                            <h4 id="total1"></h4>
+                                            <div class="product-details-cart-wishlist">
+                                                <input type="submit" class="btn" value="Sepete Ekle " />
+                                            </div>
+
+                                            @*<div class="product-details-cart-wishlist">
+                                            <input type="submit" class="btn" value="Sepete git " />
+                                            </div>*@
                                         </div>
-                                    </div>
-                                    <div class="product-details-action">
-                                        <h4 class="price"></h4>
-                                        <div class="product-details-cart-wishlist">
-                                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Sepete Ekle</button>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <!--== End Product Info Area ==-->
                             </div>
@@ -337,49 +341,6 @@
         </div>
     </div>
 </aside>
-<!--== End Product Quick View Modal ==-->
-@*
-                                               <div class="col-6 col-lg-4 col-lg-2 col-xl-2">
-                    <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="#FFEDB4">
-                        <img class="icon" src="~/clientt/assets/images/shop/category/2.webp" width="80" height="80" alt="Image-HasTech">
-                        <h3 class="title">Skin care</h3>
-                    </a>
-                    <!--== End Product Category Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 col-lg-2 col-xl-2 mt-lg-0 mt-sm-6 mt-4">
-                    <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="#DFE4FF">
-                        <img class="icon" src="~/clientt/assets/images/shop/category/3.webp" width="80" height="80" alt="Image-HasTech">
-                        <h3 class="title">Lip stick</h3>
-                    </a>
-                    <!--== End Product Category Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 col-lg-2 col-xl-2 mt-xl-0 mt-sm-6 mt-4">
-                    <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="#FFEACC">
-                        <img class="icon" src="~/clientt/assets/images/shop/category/4.webp" width="80" height="80" alt="Image-HasTech">
-                        <h3 class="title">Face skin</h3>
-                        <span data-bg-color="#835BF4" class="flag-new">sale</span>
-                    </a>
-                    <!--== End Product Category Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 col-lg-2 col-xl-2 mt-xl-0 mt-sm-6 mt-4">
-                    <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="#FFDAE0">
-                        <img class="icon" src="~/clientt/assets/images/shop/category/5.webp" width="80" height="80" alt="Image-HasTech">
-                        <h3 class="title">Blusher</h3>
-                    </a>
-                    <!--== End Product Category Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 col-lg-2 col-xl-2 mt-xl-0 mt-sm-6 mt-4">
-                    <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="#FFF3DA">
-                        <img class="icon" src="~/clientt/assets/images/shop/category/6.webp" width="80" height="80" alt="Image-HasTech">
-                        <h3 class="title">Natural</h3>
-                    </a>
-                    <!--== End Product Category Item ==-->
-                </div>*@
 
 
 @section Scriptim {
@@ -387,10 +348,14 @@
         $(document).on("click", "#UrunPopup", function () {
             var jsBaslik = $(this).data('baslik');
             var jsIcerik = $(this).data('icerik');
-            var jsFiyat  ='₺'+$(this).data('fiyat');
+            var jsFiyat = '₺' + $(this).data('fiyat');
+            var jsidd = $(this).data('idd');
             $(".product-details-content .product-details-title").html(jsBaslik);
             $(".product-details-content #urunIcerikParagrafi").html(jsIcerik);
             $(".product-details-content .price").html(jsFiyat);
+            $("#total1").html('');
+            $("#price2").val(1);
+            $("#productidd").val(jsidd);
         });
     </script>
 
